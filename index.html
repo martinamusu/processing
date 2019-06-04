@@ -11,7 +11,50 @@
         <script type="text/processing">
 
             // Write your project here
-            
+            float r; 
+float x, y;
+float a = 0;
+float s = 0;
+
+void setup () {
+  
+  size( 500, 500); 
+  noStroke();
+  rectMode(CENTER);
+  frameRate(40);
+  x = 100;
+  y = 100;
+  
+}
+
+void draw (){
+  background (0);
+  a = a + 0.04;
+  s = cos(a)*2;
+  scale(s);
+  pushMatrix(); 
+  translate (width/2, height/2);
+  rotate (radians(-r));
+  fill (255,0, 255);
+  ellipse (0,0,100,100);
+  scale(s);
+  fill (200,200,0);
+  rect(-40, -40, 80,80);
+  scale(s);
+  fill(0,255,100);
+  rect( x, y, 20, 20); 
+  scale(s);
+  fill( 255, 255,255);
+  ellipse (20,20, 40, 40);
+  scale(s);
+  
+  
+   popMatrix ();
+  r += 1; 
+
+  
+  
+}
             // Example
             void setup() {
               size(200, 200);
